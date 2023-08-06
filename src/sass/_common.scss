@@ -11,3 +11,129 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+
+  .body {
+    background-color: white;
+    width: 1202px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    background-color: whitesmoke;
+    display: block;
+    width: 1182px;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .breed-select {
+    display: block;
+    margin: 24px auto;
+    width: 250px;
+    height: 35px;
+  }
+
+  .cat-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cat-img {
+    display: flex;
+  }
+
+  .cat-inform {
+    display: flex;
+    flex-wrap: wrap;
+    width: 680px;
+  }
+
+  .cat-name {
+    display: flex;
+    width: 680px;
+    margin: 0;
+    padding: 20px;
+
+    text-shadow: 2px 2px 20px #c4c4c4, 5px 5px 5px #dcc4c4;
+  }
+
+  .cat-desc {
+    display: flex;
+    width: 680px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 20px;
+  }
+
+  .temperament {
+    display: flex;
+    width: 680px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+
+    text-shadow: 2px 2px 8px #c4c4c4, 3px 3px 3px #dcc4c4;
+  }
+
+  .cat-temp {
+    display: flex;
+    width: 680px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+
+  .loader {
+    margin-top: 40px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .error {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: red;
+  }
+
+  .loaderr {
+    background-color: blue;
+    position: relative;
+    width: 85px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#FFF 50px, transparent 0),
+                      linear-gradient(#FFF 50px, transparent 0),
+                      linear-gradient(#FFF 50px, transparent 0),
+                      linear-gradient(#FFF 50px, transparent 0),
+                      linear-gradient(#FFF 50px, transparent 0),
+                      linear-gradient(#FFF 50px, transparent 0);
+    background-position: 0px center, 15px center, 30px center, 45px center, 60px center, 75px center, 90px center;
+    animation: rikSpikeRoll 0.65s linear infinite alternate;
+  }
+@keyframes rikSpikeRoll {
+  0% { background-size: 10px 3px;}
+  16% { background-size: 10px 50px, 10px 3px, 10px 3px, 10px 3px, 10px 3px, 10px 3px}
+  33% { background-size: 10px 30px, 10px 50px, 10px 3px, 10px 3px, 10px 3px, 10px 3px}
+  50% { background-size: 10px 10px, 10px 30px, 10px 50px, 10px 3px, 10px 3px, 10px 3px}
+  66% { background-size: 10px 3px, 10px 10px, 10px 30px, 10px 50px, 10px 3px, 10px 3px}
+  83% { background-size: 10px 3px, 10px 3px,  10px 10px, 10px 30px, 10px 50px, 10px 3px}
+  100% { background-size: 10px 3px, 10px 3px, 10px 3px,  10px 10px, 10px 30px, 10px 50px}
+}
+    
