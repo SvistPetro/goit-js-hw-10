@@ -1,4 +1,5 @@
 import axios from "axios";
+import styles from "./sass/index.scss";
 // import fetchBreeds from './cat-api';
 
 
