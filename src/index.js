@@ -1,5 +1,5 @@
 import axios from "axios";
-import style from "./style.css";
+import styles from "./css/styles.css";
 // import fetchBreeds from './cat-api';
 
 axios.defaults.headers.common["x-api-key"] = "live_twwUMvCaXvvrcD4ruWgDDk2nwCNoo5ZZzndY4D852AwSlkcT7vTR3LqF7Rzn5tGU";
@@ -8,10 +8,6 @@ const select = document.querySelector('.breed-select');
 const catInform = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
-// const catImg = document.querySelector('.cat-img');
-// const catName = document.querySelector('.cat-name');
-// const catDesc = document.querySelector('.cat-desc');
-// const catTemp = document.querySelector('.cat-temp');
 
 select.addEventListener('input', fetchCatByBreed);
 
@@ -24,6 +20,9 @@ const CAT_ENDPOINT = 'images/';
 function fetchBreeds() {
     return fetch(`${BASE_URL}${CALL_ENDPOINT}?${API_KEY}`).then((resp) => {
         if (!resp.ok) {
+            error.classList.remove('visually-hidden');
+            loader.classList.add('visually-hidden');
+
             throw new Error(resp.statusText);
         }
         return resp.json();
@@ -32,9 +31,16 @@ function fetchBreeds() {
 
 function fetchCatByBreed(breedId) {
     catInform.innerHTML = '';
+    select.classList.add('visually-hidden');
+    error.classList.add('visually-hidden');
+    loader.classList.remove('visually-hidden');
     let id = select.value;
     return fetch(`${BASE_URL}${CAT_ENDPOINT}${id}`).then((resp) => {
+        
         if (!resp.ok) {
+            select.classList.remove('visually-hidden');
+            error.classList.remove('visually-hidden');
+            loader.classList.add('visually-hidden');
             throw new Error(resp.statusText);
         }
 
@@ -45,10 +51,14 @@ function fetchCatByBreed(breedId) {
 //
 
 function addSelectContent(arr) {
+    loader.classList.add('visually-hidden');
+    select.classList.remove('visually-hidden');
     return arr.map(({reference_image_id, name}) => `<option value="${reference_image_id}">${name}</option>`).join('');
 }
 
 function addCatContent(arr) {
+    loader.classList.add('visually-hidden');
+    select.classList.remove('visually-hidden');
     return arr.map(({reference_image_id, name, description, temperament}) => `<img class="cat-img" src="https://cdn2.thecatapi.com/images/${reference_image_id}.jpg" alt="${name}" width="600"><h1 class="cat-name">${name}</h1><p class="cat-desc">${description}</p><h2 class="cat-temp">${temperament}</h2>`).join('');
 }
 
