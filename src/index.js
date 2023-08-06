@@ -1,5 +1,4 @@
 import axios from "axios";
-import styles from "./css/styles.css";
 // import fetchBreeds from './cat-api';
 
 
